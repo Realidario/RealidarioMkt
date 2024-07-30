@@ -1,0 +1,21 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+
+---
+
+<Layout title="Seguridad">
+    <Container>
+      <Sectionhead>
+        <Fragment slot="title">Seguridad informatica</Fragment>
+        <Fragment slot="desc">
+          Simple & Predictable pricing. No Surprises.
+        </Fragment>
+      </Sectionhead>
+  
+      <!-- <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+        {pricing.map((item) => <PricingCard plan={item} />)}
+      </div> -->
+    </Container>
+  </Layout>

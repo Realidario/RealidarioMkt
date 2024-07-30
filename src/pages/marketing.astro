@@ -5,20 +5,16 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 
-// Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
 ---
 
-<Layout title="About">
+<Layout title="Marketing">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About</Fragment>
+      <Fragment slot="title">Marketing digital</Fragment>
       <Fragment slot="desc">We are a small passionate team.</Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+    <!-- <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
         Empowering the world with Astro.
       </h2>
@@ -52,6 +48,6 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </div>
         ))
       }
-    </div>
+    </div> -->
   </Container>
 </Layout>

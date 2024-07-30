@@ -1,69 +1,60 @@
 ---
-// @ts-ignore
 import { Icon } from "astro-icon/components";
+import AOSWrapper from "./AOSWrapper";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "Cuenta con tu propio Framework",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+      "Desarrollamos tu sitio usando React, componentes web, o simplemente HTML + JavaScript.",
     icon: "bx:bxs-briefcase",
+    fade: "fade-down-left",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "100% Estatico HTML, Sin JS",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
+      "Astro convierte toda la página en HTML estático, eliminando por defecto todo el JavaScript de la compilación final.",
     icon: "bx:bxs-window-alt",
+    fade: "fade-down-left",
   },
   {
-    title: "On-Demand Components",
+    title: "Componentes a petición",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
+      "¿Necesitas algo de JS? Astro puede hidratar automáticamente los componentes interactivos cuando se hacen visibles en la página.",
     icon: "bx:bxs-data",
+    fade: "fade-down-left",
   },
   {
-    title: "Broad Integration",
+    title: "Amplia integración",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
+      "Astro soporta TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, y cualquier otro paquete npm.",
     icon: "bx:bxs-bot",
+    fade: "fade-down-left",
   },
   {
-    title: "SEO Enabled",
+    title: "SEO habilitado",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+      "Los sitemaps automáticos, los canales RSS, la paginación y las colecciones eliminan las molestias del SEO y la sindicación. Simplemente funciona.",
     icon: "bx:bxs-file-find",
-  },
-  {
-    title: "Community",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
-  },
+    fade: "fade-down-left",
+  }
 ];
 ---
 
-<div class="mt-16 md:mt-0">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
-  </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
-  </p>
-</div>
-
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+<AOSWrapper client:load>
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-28 gap-16">
   {
     features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+      <div  class="flex gap-4 items-start shadow-xl p-4">
+        <div class="mt-1 bg-[#09db81] rounded-full  p-2 w-8 h-8 shrink-0">
           <Icon class="text-white" name={item.icon} />
         </div>
         <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <h3 class="font-semibold text-lg text-[#19475b]">{item.title}</h3>{" "}
           <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
         </div>
       </div>
     ))
   }
 </div>
+</AOSWrapper>

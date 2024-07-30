@@ -1,0 +1,103 @@
+---
+import AOSWrapper from "./AOSWrapper";
+const servicios = [
+  {
+    id: "desarrollo",
+    title: "Desarrollo y diseño web",
+    img: "/Servicios/Desarrollo-web.jpg",
+    listServices: [
+      "Sitios web",
+      "Aplicaciones web",
+      "Programas web",
+      "Diseño conceptual",
+      "Front-end",
+    ],
+    placeLink: "/desarrollo",
+    fade: "fade-down-right",
+    position: "der",
+  },
+  {
+    id: "marketing",
+    title: "Marketing digital",
+    img: "/Servicios/Marketing.jpg",
+    listServices: [
+      "Investigación de mercado",
+      "Estrategia SEO y SEM",
+      "Estrategias de contenido",
+      "Campañas publicitarias",
+      "Gestión de redes",
+    ],
+    placeLink: "/marketing",
+    fade: "fade-down-left",
+    position: "izq",
+  },
+  {
+    id: "software",
+    title: "Desarrollo e implementacion de software",
+    img: "/Servicios/Software.jpg",
+    listServices: [
+      "Desarrollo de aplicaciones en general",
+      "Mantenimiento de programas",
+      "Desarrollo y personalización de ERP",
+      "Pruebas, depuración y actualizaciones",
+    ],
+    placeLink: "/software",
+    fade: "fade-down-right",
+    position: "der",
+  },
+  {
+    id: "seguridad",
+    title: "Seguridad informatica",
+    img: "/Servicios/Seguridad.jpg",
+    listServices: [
+      "Diseño e implementación de políticas de seguridad",
+      "Análisis y evaluación de riesgos",
+      "Configuración y mantenimiento",
+      "Monitoreo y respuesta a incidentes",
+      "Pruebas de seguridad",
+      "Educación y capacitación",
+    ],
+    placeLink: "/seguridad",
+    fade: "fade-down-left",
+    position: "izq",
+  },
+];
+---
+
+<section>
+  <h2
+    class="text-3xl lg:text-5xl font-bold lg:tracking-tight text-center text-[#19475b] mb-28">
+    Todo lo que requieres para automatizar tu empresa de forma digital
+  </h2>
+  <AOSWrapper client:load>
+    <section class="flex flex-col gap-24">
+      {
+        servicios.map((card) => (
+          <div id={card.id} class={`flex flex-col md:flex-row justify-center items-center gap-10 ${card.position=='izq'?('md:flex-row-reverse'):''}`}>
+            <div class="w-full md:w-[450px]">
+              <h1 class="mb-8 text-3xl font-bold text-[#19475b] text-center md:text-start">
+                {card.title}
+              </h1>
+              <ul class="font-semibold  list-disc ml-12">
+                {
+                    card.listServices.map(item=>(<li>{item}</li>))
+                }
+              </ul>
+              <a
+                class="border-b-4 border-[#09db81] hover:scale-110 transition-transform text-[#19475b] rounded mt-5 inline-block font-bold pt-3 px-4"
+                href={card.placeLink}>
+                Mas informacion
+              </a>
+            </div>
+            <img
+              data-aos={card.fade}
+              class="rounded-xl w-full md:h-[200px] md:w-[300px] lg:w-[450px] object-cover lg:h-[300px]"
+              src={card.img}
+              alt={card.title}
+            />
+          </div>
+        ))
+      }
+    </section>
+  </AOSWrapper>
+</section>
